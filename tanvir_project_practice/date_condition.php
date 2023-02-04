@@ -36,7 +36,7 @@
               */  
 
                 //date format
-                /*
+                
                 $date = date('d');
                 echo "Month of day: ".$date."<br>";
                 $date = date('D');
@@ -54,7 +54,7 @@
                 $date = date('Y-m-d');
                 echo "Today is Date: ".$date."<br>";
                 
-                */
+                
 
                 // Date of condition 
                 
