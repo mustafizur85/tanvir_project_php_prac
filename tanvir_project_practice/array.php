@@ -6,7 +6,20 @@
     <div class="row">
         <div class="col-md-12">
 
+
+        <style>
+            .student_info{
+                padding: 10px;
+                margin:5px;
+                border:2px solid black;
+                float: left;
+                background: red;
+            }
+        </style>
+
             <?php 
+
+
                 /*
                 // associative array (singel daimention array)
 
@@ -48,6 +61,9 @@
                 
 
                 
+
+
+
              
                 // associative array (multidaimentional array)
 
@@ -59,7 +75,11 @@
                         'father_name'       => 'Md. Mustafizur Rahman',
                         'mother_name'       => 'Khairunnesa Siddiqua',
                         'class'             => 'One',
-                        'roll'              => '01'
+                        'roll'              => '01',
+                        'addres'            => [
+                            'present_addr' => 'Abdullahpur',
+                            'permanent_addr' => 'Fulbaria',
+                        ]
 
                     ],
 
@@ -70,7 +90,12 @@
                         'father_name'       => 'Md. Mustafizur Rahman',
                         'mother_name'       => 'Khairunnesa Siddiqua',
                         'class'             => 'One',
-                        'roll'              => '02'
+                        'roll'              => '02',
+                        'addres'            => [
+                            'present_addr' => 'Haldia',
+                            'permanent_addr' => 'Mymensingh',
+                        ]
+
 
                     ],
 
@@ -81,31 +106,150 @@
                         'father_name'       => 'Md. Mustafizur Rahman',
                         'mother_name'       => 'Khairunnesa Siddiqua',
                         'class'             => 'One',
-                        'roll'              => '03'
+                        'roll'              => '03',
+                        'addres'            => [
+                            'present_addr' => 'Keranigonj',
+                            'permanent_addr' => 'Dhaka',
+                        ]
 
                     ],
 
-                    [
-                        
-                        'id'                => 'ST0049',
-                        'name'              => 'Raha',
-                        'father_name'       => 'Sayeasta khan',
-                        'mother_name'       => 'jelly',
-                        'class'             => 'One',
-                        'roll'              => '04'
+                   
 
-                    ],
+                   
                     
             ];
 
             echo '<pre>';
-            //print_r($stu_info);
+           // print_r($stu_info);
             echo '</pre>';
 
-            echo '<pre>';
-            print_r($stu_info['0']['name']);
-            print_r($stu_info['1']['name']);
-            echo '</pre>';
+           /*
+            print_r($stu_info['0']['name']."<br>");
+            print_r($stu_info['1']['name']."<br>");
+            print_r($stu_info['3']['mother_name']."<br>");
+            
+            echo $stu_info['3']['mother_name']."<br>";
+            */
+
+
+            foreach($stu_info as $key=>$value){
+                /*
+                echo $key;
+                echo "<pre>";
+                print_r($value);
+                echo "</pre>";
+                exit;
+                */
+
+                echo '<div class = "student_info">';
+              
+                echo "Student id: ".$value['id']."<br>";
+                echo "Student name: ".$value['name']."<br>";
+                echo "Student Father's name: ".$value['father_name']."<br>";
+                echo "Student Mother's name: ".$value['mother_name']."<br>";
+                echo "Student class: ".$value['class']."<br>";
+                echo "Student roll: ".$value['roll']."<br>";
+                //Three Daimention
+                echo "Present Address: ".$value['addres']['present_addr']."<br>";
+                echo "Permanent Address: ".$value['addres']['permanent_addr']."<br>";
+               
+                echo '</div>';
+
+                             
+               
+
+            }
+
+            
+            
+            // associative array (multidaimentional array) 
+            //Conversation array of  object
+
+            $stu_info  =(object)[
+                (object)[
+                    
+                    'id'                => 'ST0046',
+                    'name'              => 'Maisha',
+                    'father_name'       => 'Md. Mustafizur Rahman',
+                    'mother_name'       => 'Khairunnesa Siddiqua',
+                    'class'             => 'One',
+                    'roll'              => '01',
+                    'addres'            => [
+                        'present_addr' => 'Abdullahpur',
+                        'permanent_addr' => 'Fulbaria',
+                    ]
+
+                ],
+
+                (object)[
+                    
+                    'id'                => 'ST0047',
+                    'name'              => 'Mahatab',
+                    'father_name'       => 'Md. Mustafizur Rahman',
+                    'mother_name'       => 'Khairunnesa Siddiqua',
+                    'class'             => 'One',
+                    'roll'              => '02',
+                    'addres'            => [
+                        'present_addr' => 'Haldia',
+                        'permanent_addr' => 'Mymensingh',
+                    ]
+
+
+                ],
+
+               (object) [
+                    
+                    'id'                => 'ST0048',
+                    'name'              => 'Mehenaf',
+                    'father_name'       => 'Md. Mustafizur Rahman',
+                    'mother_name'       => 'Khairunnesa Siddiqua',
+                    'class'             => 'One',
+                    'roll'              => '03',
+                    'addres'            => [
+                        'present_addr' => 'Keranigonj',
+                        'permanent_addr' => 'Dhaka',
+                    ]
+
+                ],
+
+                
+               
+                
+        ];
+
+
+
+        
+        foreach($stu_info as $key=>$value){
+            /*
+            echo $key;
+            echo "<pre>";
+            print_r($value);
+            echo "</pre>";
+            exit;
+            */
+
+            echo '<div>';
+          
+            echo "Student id: ".$value->id."<br>";
+            echo "Student name: ".$value->name."<br>";
+            echo "Student Father's name: ".$value->father_name."<br>";
+            echo "Student Mother's name: ".$value->mother_name."<br>";
+            echo "Student class: ".$value->class."<br>";
+            echo "Student roll: ".$value->roll."<br>";
+            //Three Daimention
+            echo "Present Address: ".$value['addres']['present_addr']."<br>";
+            echo "Permanent Address: ".$value['addres']['permanent_addr']."<br>";
+           
+            echo '</div>';
+
+                         
+           
+
+        }
+
+           
 
             ?>
 
