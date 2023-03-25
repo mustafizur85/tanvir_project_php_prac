@@ -32,7 +32,7 @@
     <div class="col-md-6">        
         
                 <?php                 
-                    $month = date('F');
+                    $month = date('F');         // date is built in founction & F is built in parametre
                     $month_day = date('t');                            
                                         
                 ?>

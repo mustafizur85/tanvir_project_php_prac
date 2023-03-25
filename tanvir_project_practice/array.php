@@ -64,7 +64,7 @@
 
 
 
-             
+             /*
                 // associative array (multidaimentional array)
 
                 $stu_info  =[
@@ -124,23 +124,23 @@
            // print_r($stu_info);
             echo '</pre>';
 
-           /*
+           
             print_r($stu_info['0']['name']."<br>");
             print_r($stu_info['1']['name']."<br>");
             print_r($stu_info['3']['mother_name']."<br>");
             
             echo $stu_info['3']['mother_name']."<br>";
-            */
+            
 
 
             foreach($stu_info as $key=>$value){
-                /*
+                
                 echo $key;
                 echo "<pre>";
                 print_r($value);
                 echo "</pre>";
                 exit;
-                */
+                
 
                 echo '<div class = "student_info">';
               
@@ -161,10 +161,14 @@
 
             }
 
-            
+        */
+
+
+
             
             // associative array (multidaimentional array) 
-            //Conversation array of  object
+            //Conversation array of  object 
+            // array কে object করার Example:
 
             $stu_info  =(object)[
                 (object)[
@@ -230,7 +234,7 @@
             exit;
             */
 
-            echo '<div>';
+            echo '<div class = "student_info">';
           
             echo "Student id: ".$value->id."<br>";
             echo "Student name: ".$value->name."<br>";
@@ -239,8 +243,8 @@
             echo "Student class: ".$value->class."<br>";
             echo "Student roll: ".$value->roll."<br>";
             //Three Daimention
-            echo "Present Address: ".$value['addres']['present_addr']."<br>";
-            echo "Permanent Address: ".$value['addres']['permanent_addr']."<br>";
+            echo "Present Address: ".$value->addres['present_addr']."<br>";
+            echo "Permanent Address: ".$value->addres['permanent_addr']."<br>";
            
             echo '</div>';
 
