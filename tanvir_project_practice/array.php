@@ -217,6 +217,22 @@
 
                 ],
 
+
+                (object) [
+                    
+                    'id'                => 'ST0049',
+                    'name'              => 'Asif',
+                    'father_name'       => 'Md. Mustafizur Rahman',
+                    'mother_name'       => 'Khairunnesa Siddiqua',
+                    'class'             => 'One',
+                    'roll'              => '03',
+                    'addres'            => [
+                        'present_addr' => 'Keranigonj',
+                        'permanent_addr' => 'Dhaka',
+                    ]
+
+                ],
+
                 
                
                 
