@@ -1,6 +1,9 @@
 <?php
+
   define ("SUPPORTEMAIL","mmritsupport@gmail.com");
+  include "all_function.php";
 ?>
+
 
 <!doctype html>
 <html lang="en">
