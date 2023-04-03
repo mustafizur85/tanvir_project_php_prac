@@ -44,7 +44,8 @@
     <!-- Custom styles for this template -->
     <link href="css/blog.css" rel="stylesheet">
   </head>
-  <body>
+  
+<body>
     
 <div class="container">
   <header class="blog-header py-3">
