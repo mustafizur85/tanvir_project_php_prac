@@ -1,5 +1,4 @@
-<?php
-
+<?php session_start();
   define ("SUPPORTEMAIL","mmritsupport@gmail.com");
   include "all_function.php";
 ?>
@@ -21,6 +20,7 @@
 
     <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
