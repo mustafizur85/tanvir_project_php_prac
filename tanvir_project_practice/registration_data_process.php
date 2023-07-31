@@ -1,7 +1,9 @@
 
 <?php session_start();
-  $email = $_POST["email"];
   
+  $email = $_POST["email"];
+
+   
   $validation_response = registration_data_validate();
 
  
@@ -33,11 +35,17 @@
   
   function registration_data_validate(){
     
-      $email = $_POST["email"];
-      $name = $_POST["name"];
-      $number = $_POST["number"];
-      $date = $_POST["date"];
-      $file = $_POST["file"];
+      $email          = $_POST["email"];
+      $name           = $_POST["name"];
+      $gender         = $_POST["gender"];
+      $how_do_know    = $_POST["how_do_know"];
+     
+//store into session variable to show old value during error
+    $_SESSION["form_data"]["user_email"]    = $email;
+    $_SESSION["form_data"]["user_name"]     = $name;
+    $_SESSION["form_data"]["gender"]        = $gender;
+    
+
 
       $is_error   = false;
       
@@ -47,19 +55,7 @@
 
       if(empty($name)){
         $is_error = true;
-      }
-
-      if(empty($number)){
-        $is_error = true;
-      }
-
-      if(empty($date)){
-        $is_error = true;
-      }
-
-      if(empty($file)){
-        $is_error = true;
-      }
+      }     
 
       if($is_error){
         $status   = "error";
@@ -73,6 +69,16 @@
 
 
   function registration_data_store(){
+
+    $email    = $_POST["email"];
+    $name     = $_POST["name"];
+    
+    // Database Qurey : insert Qurey
+
+    unset($_SESSION["form_data"]);
+    //session_destroy($_SESSION["form_data"]);
+
+
         return true;
   }
  
